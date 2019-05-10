@@ -108,14 +108,17 @@ cc.Class({
             // 发射子弹
             this.time_lapsed += dt;
             if (this.time_lapsed > this.interval) {
-                this.time_lapsed = 0;
+                this.time_lapsed = 0.8;
                 this.fire();
             }
 
             // 产生敌机
             this.interval_enemy -= dt;
             if (this.interval_enemy < 0) {
-                this.interval_enemy = Math.random() * 2 + 0.5;
+                // this.interval_enemy = Math.random() * 2 + 0.5;
+                this.interval_enemy = Math.random() * 2 + 0.0;
+                this.spawnEnemy();
+                this.spawnEnemy();
                 this.spawnEnemy();
             }
         }
